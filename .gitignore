@@ -1,0 +1,16 @@
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+._*
+
+# editor tmp files #
+####################
+*.un~
+*.swp
+*.swo
+.idea/*
+.nova/*
+
