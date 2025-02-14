@@ -1,0 +1,59 @@
+:root {
+	color-scheme: light dark;
+}
+html {
+	/* sRGB colors */
+	--red: hsl(360, 100%, 50%);
+	--orange: hsl(39, 100%, 50%);
+	--yellow: hsl(60, 100%, 50%);
+	--green: hsl(120, 100%, 25%);
+	--blue: hsl(240, 100%, 50%);
+	--purple: hsl(300, 100%, 25%);
+	--black: hsl(0, 0%, 0%);
+	--white: hsl(0, 0%, 100%);
+	
+	/* abstract grays */
+	--loud: light-dark(
+		var(--black), 
+		var(--white)
+	);
+	--silent: light-dark(
+		var(--white), 
+		var(--black)
+	);
+	--hushed: light-dark(
+		hsl(from var(--black) h 0% 40%),
+		hsl(from var(--black) h 0% 60%)
+	);
+	--whisper: light-dark(
+		hsl(from var(--black) h 0% 60%),
+		hsl(from var(--black) h 0% 40%)
+	);
+	--quiet: light-dark(
+		hsl(from var(--black) h 0% 80%),
+		hsl(from var(--black) h 0% 20%)
+	);
+	
+	/* fonts */
+	--sans-serif: sans-serif;
+	--serif: serif;
+	--monospace: monospace;
+}
+
+@media (color-gamut: p3) {
+  html {
+	  /* High gamut colors */
+	--red: color(display-p3 1 0 0);
+	--orange: color(display-p3 1 0.6 0);
+	--yellow: color(display-p3 1 1 0);
+	--green: color(display-p3 0.239 0.81 0.066);
+	--blue: color(display-p3 0.005 0.005 1);
+	--purple: color(display-p3 0.553 0.036 0.589);
+  }
+}
+
+body {
+	background: var(--silent);
+	color: var(--loud);
+}
+
