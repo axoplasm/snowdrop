@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Snowdrop</title>
+        <meta charset="utf-8" />
+        <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    </head>
+    <body>
+        <main>
+            <hgroup id="top">
+                <h1>HTML elements</h1>
+            </hgroup>
+
+            <section id="headings">
+                <hgroup>
+                    <h2>Headings</h2>
+                </hgroup>
+
+                <h1>Heading Level 1 <small>small text</small> <a href="//example.com">link</a></h1>
+                <h2>Heading Level 2 <small>small text</small> <a href="//example.com">link</a></h2>
+                <h3>Heading Level 3 <small>small text</small> <a href="//example.com">link</a></h3>  
+                <h4>Heading Level 4 <small>small text</small> <a href="//example.com">link</a></h4>
+                <h5>Heading Level 5 <small>small text</small> <a href="//example.com">link</a></h5> 
+                <h6>Heading Level 6 <small>small text</small> <a href="//example.com">link</a></h6>
+            </section>
+
+            <section id="block-text">
+                <hgroup>
+                    <h2>Block text</h2>
+                </hgroup>
+
+                <blockquote>
+                    blockquote
+                </blockquote>
+
+                <dl>
+                    <dt>dt</dt>
+                    <dd>dd</dd>
+                </dl>
+
+                <hr />
+
+                <ol>
+                    <li>li</li>
+                </ol>
+
+                <ul>
+                    <li>li</li>
+                </ul>
+
+                <menu>
+                    <li>li</li>
+                </menu>
+
+                <p>
+                    p
+                </p>
+
+                <pre>pre</pre>
+
+            </section>
+
+            <section id="inline-text">
+                <hgroup>
+                    <h2>Inline text</h2>
+                </hgroup>
+
+                <a>a</a>
+
+                <abbr>abbr</abbr>
+
+                <acronym>acronym*</acronym>(deprecated)
+
+                <b>b</b>
+
+                <big>big</big>(deprecated)
+
+                <button>button</button>
+
+                <cite>cite</cite>
+
+                <code>code</code>
+
+                <del>del</del>
+
+                <dfn>dfn</dfn>
+
+                <em>em</em>
+
+                <i>i</i>
+
+                <ins>ins</ins>
+
+                <kbd>kbd</kbd>
+
+                <mark>mark</mark>
+
+                <q>q</q>
+
+                <ruby> 漢 <rp>(</rp><rt>kan</rt><rp>)</rp> 字 <rp>(</rp><rt>ji</rt><rp>)</rp> </ruby>
+
+                <s>s</s>
+
+                <samp>samp</samp>
+
+                <small>small</small>
+
+                <strong>strong</strong>
+
+                <sub>sub</sub>
+
+                <sup>sup</sup>
+
+                <time>time</time>
+
+                <u>u</u>
+
+                <var>var</var>
+
+            </section>
+
+            <section id="media">
+                <hgroup>
+                    <h2>Media</h2>
+                </hgroup>
+                
+                <audio>
+                    <source />
+                </audio>
+
+                <img src="images/snowdrop-240x240.jpg" alt="Snowdrop flower" />
+
+                <figure>
+                    <img src="images/snowdrop-240x240.jpg" alt="Snowdrop flower" />
+                    <figcaption>figcaption</figcaption>
+                </figure>
+
+                <picture>
+                    <source srcset="images/snowdrop-240x240.jpg" media="(orientation: landscape)" />
+                    <img src="images/snowdrop-240x240.jpg" alt="Snowdrop flower" />
+                </picture>
+
+                <video>
+                    <source />
+                </video>
+
+            </section>
+
+            <section id="tables">
+                <hgroup>
+                    <h2>Tables</h2>
+                </hgroup>
+
+                <table>
+                    <caption>
+                        caption
+                    </caption>
+                    <colgroup>
+                        <col />
+                        <col />
+                        <col />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>th</th>
+                            <th>th</th>
+                            <th>th</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>td</td>
+                            <td>td</td>
+                            <td>td</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>td</td>
+                            <td>td</td>
+                            <td>td</td>
+                        </tr>
+                    </tfoot>
+                </table>
+                col
+                colgroup
+
+            </section>
+
+            <section id="forms">
+                <hgroup>
+                    <h2>Forms</h2>
+                </hgroup>
+
+                <form>
+
+                    <div class="form-element">
+                        <input type="button" id="input-button" name="form-button" value="button" />
+                    </div>
+
+                    <fieldset>
+                        <legend>checkboxes</legend>
+                        <div class="form-element">
+                            <input type="checkbox" id="input-checkbox1" name="form-checkbox" checked />
+                            <label for="input-checkbox1">checkbox1</label>
+                        </div>
+                        <div class="form-element">
+                            <input type="checkbox" id="input-checkbox1" name="form-checkbox" />
+                            <label for="input-checkbox2">checkbox2</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-element">
+                        <label for="color-input">color</label>
+                        <input type="color" id="input-color" name="form-color" />
+                    </div>
+
+                    <div class="form-element">
+                        <label for="datalist-input">datalist</label>
+                        <input list="datalist-list" id="input-datalist" name="form-datalist" />
+                        <datalist id="datalist-list">
+                            <option value="option1">option1</option>
+                            <option value="option2">option2</option>
+                        </datalist>
+                    </div>
+
+                    <div class="form-element">
+                        <label for="date-input">date</label>
+                        <input type="date" id="input-date" name="form-date" />
+                    </div>
+
+                    <div class="form-element">
+                        <label for="datetime-local-input">datetime-local</label>
+                        <input type="datetime-local" id="input-datetime-local" name="form-datetime-local" />
+                    </div>
+
+                    <div class="form-element">
+                        <label for="email-input">email</label>
+                        <input type="email" id="input-email" name="form-email" placeholder="email@example.com" />
+                    </div>
+
+                    <div class="form-element">
+                        <label for="file-input">file</label>
+                        <input type="file" id="input-file" name="form-file" />
+                    </div>
+
+                    <input type="hidden" id="input-hidden" name="form-hidden" value="hidden" />
+
+                    <div class="form-element">
+                        <label for="image-input">image</label>
+                        <input type="image" id="input-image" name="form-image" alt="Snowdrop flower" src="images/snowdrop-240x240.jpg" />
+                    </div>
+
+                    <div class="form-element">
+                        <label for="month-input">month</label>
+                        <input type="month" id="input-month" name="form-month" />
+                    </div>
+
+                    <div class="form-element">
+                        <label for="number-input">number</label>
+                        <input type="number" id="input-number" name="form-number" />
+                    </div>
+
+                    <div class="form-element">
+                        <label for="password-input">password</label>
+                        <input type="password" id="input-password" name="form-password" />
+                    </div>
+
+                    <fieldset>
+                        <legend>radio buttons</legend>
+                        <div class="form-element">
+                            <input type="radio" id="input-radio1" name="form-radio" checked />
+                            <label for="input-radio1">radio1</label>
+                        </div>
+                        <div class="form-element">
+                            <input type="radio" id="input-radio1" name="form-radio" />
+                            <label for="input-radio2">radio2</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-element">
+                        <label for="range-input">range</label>
+                        <input type="range" id="input-range" name="form-range" min="0" max="100" />
+                    </div>
+
+                    <div class="form-element">
+                        <input type="reset" id="input-reset" name="form-reset" value="reset" />
+                    </div>
+
+                    <div class="form-element">
+                        <input type="search" id="input-search" name="form-search" value="search" />
+                    </div>
+
+                    <div class="form-element">
+                        <input type="submit" id="input-submit" name="form-submit" value="submit" />
+                    </div>
+
+                    <div class="form-element">
+                        <label for="tel-input">tel</label>
+                        <input type="tel" id="input-tel" name="form-tel" />
+                    </div>
+
+                    <div class="form-element">
+                        <label for="text-input">text</label>
+                        <input type="text" id="input-text" name="form-text" />
+                    </div>
+
+                    <div class="form-element">
+                        <label for="time-input">time</label>
+                        <input type="time" id="input-time" name="form-time" />
+                    </div>
+
+                    <div class="form-element">
+                        <label for="url-input">url</label>
+                        <input type="url" id="input-url" name="form-url" />
+                    </div>
+
+                    <div class="form-element">
+                        <label for="week-input">week</label>
+                        <input type="week" id="input-week" name="form-week" />
+                    </div>
+
+                    <section>
+                        <optgroup>
+                            <option>option</option>
+                        </optgroup>
+                    </section>
+                    <textarea>textarea</textarea>
+                </form>
+
+            </section>
+
+            <section id="interactive-elements">
+                <hgroup>
+                    <h2>Interactive elements</h2>
+                </hgroup>
+
+                <map>
+                    <area />
+                </map>
+
+                <details>
+                    <summary>summary</summary>
+                    <p>details</p>
+                </details>
+
+                <iframe title="iframe" width="300" height="200" src="https://www.openstreetmap.org/export/embed.html?bbox=-122.71464586257935%2C45.49339753408489%2C-122.70187854766847%2C45.50432422876632">
+                </iframe>
+
+                <meter min="0" max="100" low="33" high="66" optimum="80" value="50">at 50/100</meter>
+
+                <progress max="100" value="70">70%</progress>
+
+            </section>
+
+            <section id="structural-elements">
+                <hgroup>
+                    <h2>Structural elements</h2>
+                </hgroup>
+
+                address
+
+                article
+
+                aside
+
+                div
+
+                footer
+
+                header
+
+                nav
+
+                search
+
+                section
+
+            </section>
+
+        </main>
+    </body>
+</html>
+
+
