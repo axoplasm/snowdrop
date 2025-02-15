@@ -30,7 +30,7 @@ html {
 		hsl(from var(--black) h 0% 40%)
 	);
 	--quiet: light-dark(
-		hsl(from var(--black) h 0% 80%),
+		hsl(from var(--black) h 0% 95%),
 		hsl(from var(--black) h 0% 20%)
 	);
 	
@@ -38,7 +38,7 @@ html {
 	--sans-serif: sans-serif;
 	--serif: serif;
 	--monospace: monospace;
-	--default-line-height: 1.25;
+	--default-line-height: 1.5;
 	--default-font-size: 18px;
 	--light-weight: 200;
 	--normal-weight: 400;
@@ -46,8 +46,10 @@ html {
 	--black-weight: 800;
 	
 	/* graphic styles */
-	--default-border-size: 2px;
+	--default-border-width: 1px;
 	--default-border-radius: 4px;
+    --block-space: 1rem;
+    --inline-space: 1rem;
 	
 	/* global defaults */
 	font-size: var(--default-font-size);
@@ -87,7 +89,10 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 h1, h2, h3 {
-	margin-block: 2rem 1rem;
+	margin-block-end: 1rem;
+	&:not(:first-of-type) {
+		margin-block-start: 2rem;
+	}
 }
 h1 {
 	font-size: 3rem;
@@ -99,7 +104,9 @@ h3 {
 	font-size: 1.5rem;
 }
 h4, h5, h6 {
-	margin-block-start: 1rem;
+	&:not(:first-of-type) {
+		margin-block-start: 1rem;
+	}
 }
 h4 {
 	font-size: 1rem;
@@ -110,4 +117,65 @@ h5 {
 h6 {
 	font-size: 0.8rem;
 }
+
+/* block text */
+p, blockquote, dl, ol, ul, menu, pre {
+	&:not(:last-child) {
+		margin-block-end: var(--block-space);
+	}
+}
+p {
+	&:not(:first-of-type) {
+		margin-block-start: var(--block-space);
+	}
+}
+blockquote {
+	background-color: var(--quiet);
+	border-radius: var(--default-border-radius);
+	color: var(--hushed);
+	font-style: italic;
+	font-size: 120%;
+	margin-block: var(--block-space);
+	padding-block: var(--block-space);
+	padding-inline: var(--inline-space);
+}
+dl, ol, ul, menu {
+    --list-indent: calc(var(--inline-space) * 2);
+}
+dl {
+}
+dt {
+    font-weight: var(--bold-weight);
+}
+dd {
+    margin-inline-start: var(--list-indent);
+    &:not(:last-child) {
+        margin-block-end: calc(var(--block-space) * 0.5);
+    }
+}
+ol, ul {
+    margin-inline-start: var(--list-indent);
+}
+ul {
+    list-style-type: disc;
+}
+ol {
+    list-style-type: decimal;
+}
+menu menu {
+    margin-inline-start: var(--list-indent);
+}
+pre {
+    font-family: var(--monospace);
+}
+hr {
+	border-color: var(--hushed);
+	border-style: solid;
+	border-width: 0 0 var(--default-border-width) 0;
+	margin-block-start: calc(var(--block-space) * 2);
+	&:not(:first-child) {
+		margin-block-end: calc(var(--block-space) * 2);
+	}
+}
+
 
