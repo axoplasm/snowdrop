@@ -41,7 +41,7 @@ html {
 	--default-line-height: 1.5;
 	--default-font-size: 18px;
     --smaller-font-size: 85%;
-    --bigger-font-size: 125%;
+    --bigger-font-size: 120%;
 	--light-weight: 200;
 	--normal-weight: 400;
 	--bold-weight: 600;
@@ -137,7 +137,7 @@ blockquote {
 	border-radius: var(--default-border-radius);
 	color: var(--hushed);
 	font-style: italic;
-	font-size: 120%;
+	font-size: var(--bigger-font-size);
 	margin-block: var(--block-space);
 	padding-block: var(--block-space);
 	padding-inline: var(--inline-space);
