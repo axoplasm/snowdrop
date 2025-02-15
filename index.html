@@ -199,10 +199,10 @@ breaks
 
             </section>
 
-            <section id="tables">
+            <section id="table">
                 <hgroup>
                     <hr />
-                    <h2><small>Tables</small></h2>
+                    <h2><small>Table</small></h2>
                 </hgroup>
 
                 <table>
@@ -213,31 +213,45 @@ breaks
                         <col />
                         <col />
                         <col />
+                        <col />
                     </colgroup>
                     <thead>
                         <tr>
-                            <th>th</th>
-                            <th>th</th>
-                            <th>th</th>
+                            <th scope="row"></th>
+                            <th scope="col">Column header A</th>
+                            <th scope="col">Column header B</th>
+                            <th scope="col">Column header C</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>td</td>
-                            <td>td</td>
-                            <td>td</td>
+                            <th scope="row">Row header 1</th>
+                            <td>Table cell A1</td>
+                            <td>Table cell B1</td>
+                            <td>Table cell C1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Row header 2</th>
+                            <td>Table cell A2</td>
+                            <td>Table cell B2</td>
+                            <td>Table cell C2</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Row header 3</th>
+                            <td>Table cell A3</td>
+                            <td>Table cell B3</td>
+                            <td>Table cell C3</td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td>td</td>
-                            <td>td</td>
-                            <td>td</td>
+                            <th scope="row"></th>
+                            <td>Table footer A</td>
+                            <td>Table footer B</td>
+                            <td>Table footer C</td>
                         </tr>
                     </tfoot>
                 </table>
-                col
-                colgroup
 
             </section>
 

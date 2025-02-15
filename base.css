@@ -26,7 +26,7 @@ html {
         hsl(from var(--black) h 0% 60%)
     );
     --whisper: light-dark(
-        hsl(from var(--black) h 0% 60%),
+        hsl(from var(--black) h 0% 80%),
         hsl(from var(--black) h 0% 40%)
     );
     --quiet: light-dark(
@@ -295,6 +295,38 @@ figure, video {
     width: auto;
 }
 figcaption {
+    color: var(--hushed);
+    font-family: var(--sans-serif);
+}
+
+/* table */
+table {
+    border: var(--default-border-width) solid var(--hushed);
+    font-family: var(--sans-serif);
+    margin-block: var(--block-space);
+}
+tbody {
+}
+thead, tfoot {
+    background-color: var(--quiet);
+}
+thead {
+    border-block-end: var(--default-border-width) solid var(--whisper);
+}
+tfoot {
+    border-block-start: var(--default-border-width) solid var(--whisper);
+}
+td, th {
+    padding-block: calc(var(--block-space) * 0.25);
+    padding-inline: calc(var(--inline-space) * 0.5);
+}
+th {
+    font-weight: var(--bold-weight);
+    &[scope="row"] {
+        border-inline-end: var(--default-border-width) solid var(--hushed);
+    }
+}
+caption {
     color: var(--hushed);
     font-family: var(--sans-serif);
 }
