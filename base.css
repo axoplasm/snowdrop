@@ -35,7 +35,7 @@ html {
     );
     
     /* type */
-    --sans-serif: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+    --sans-serif: 'Helvetica Neue', Inter, Roboto, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
     --serif: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
     --monospace: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;;
     --default-line-height: 1.5;
@@ -281,4 +281,20 @@ u {
 }
 var {
     font-style: italic;
+}
+
+/* media */
+img {
+    display: inline-block;
+    height: auto;
+    width: auto;
+}
+figure, video {
+    display: block;
+    height: auto;
+    width: auto;
+}
+figcaption {
+    color: var(--hushed);
+    font-family: var(--sans-serif);
 }
