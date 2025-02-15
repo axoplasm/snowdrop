@@ -40,6 +40,8 @@ html {
 	--monospace: monospace;
 	--default-line-height: 1.5;
 	--default-font-size: 18px;
+    --smaller-font-size: 85%;
+    --bigger-font-size: 125%;
 	--light-weight: 200;
 	--normal-weight: 400;
 	--bold-weight: 600;
@@ -50,6 +52,7 @@ html {
 	--default-border-radius: 4px;
     --block-space: 1rem;
     --inline-space: 1rem;
+    --default-transition: all 0.2s ease-in-out;
 	
 	/* global defaults */
 	font-size: var(--default-font-size);
@@ -167,6 +170,7 @@ menu menu {
 }
 pre {
     font-family: var(--monospace);
+    font-size: var(--smaller-font-size);
 }
 hr {
 	border-color: var(--hushed);
@@ -178,4 +182,102 @@ hr {
 	}
 }
 
-
+/* inline text */
+a {
+    text-decoration: underline;
+    text-decoration-style: solid;
+    transition: color 0.2s ease-in-out;
+    &:link {
+        color: var(--blue);
+    }
+    &:visited {
+        color: var(--purple);
+    }
+    &:hover {
+        color: var(--green);
+    }
+    &:active {
+        color: var(--red);
+    }
+}
+abbr {
+    font-weight: var(--bold-weight);
+}
+b, strong {
+    font-weight: var(--bold-weight);
+}
+big {
+    font-size: var(--bigger-font-size);
+}
+cite, em, i, q {
+    font-style: italic;
+}
+code, kbd {
+    background-color: light-dark(
+        color-mix(in srgb, var(--loud) 5%, transparent),
+        color-mix(in srgb, var(--loud) 15%, transparent)
+    );
+    color: var(--hushed);
+    font-family: var(--monospace);
+    font-size: var(--smaller-font-size);
+}
+del {
+    background-color: light-dark(
+        color-mix(in srgb, var(--red) 10%, transparent),
+        color-mix(in srgb, var(--red) 20%, transparent)
+    );
+    color: color-mix(in srgb, var(--red) 70%, var(--loud) 30%);
+    text-decoration: line-through;
+}
+dfn {
+    text-decoration: underline dotted;
+    text-underline-offset: 0.25em;
+}
+ins {
+    background-color: light-dark(
+        color-mix(in srgb, var(--green) 10%, transparent),
+        color-mix(in srgb, var(--green) 20%, transparent)
+    );
+    color: color-mix(in srgb, var(--green) 70%, var(--loud) 30%);
+}
+kbd {
+    border: 1px solid var(--hushed);
+    border-radius: var(--default-border-radius);
+    padding: 0.125rem;
+}
+mark {
+    background-color: color-mix(in srgb, var(--yellow) 30%, transparent);
+}
+ruby {
+}
+rt {
+    font-size: calc(var(--default-font-size) * 0.75);
+}
+s {
+    text-decoration: line-through;
+}
+samp {
+    font-family: var(--monospace);
+    font-size: var(--smaller-font-size);
+    font-weight: var(--bold-weight);
+}
+small {
+    font-size: var(--smaller-font-size);
+}
+sub {
+    font-size: var(--smaller-font-size);
+    vertical-align: sub;
+}
+sup {
+    font-size: var(--smaller-font-size);
+    vertical-align: super;
+}
+time {
+    font-weight: var(--bold-weight);
+}
+u {
+    text-decoration: underline;
+}
+var {
+    font-style: italic;
+}
