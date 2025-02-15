@@ -34,10 +34,24 @@ html {
 		hsl(from var(--black) h 0% 20%)
 	);
 	
-	/* fonts */
+	/* type */
 	--sans-serif: sans-serif;
 	--serif: serif;
 	--monospace: monospace;
+	--default-line-height: 1.25;
+	--default-font-size: 18px;
+	--light-weight: 200;
+	--normal-weight: 400;
+	--bold-weight: 600;
+	--black-weight: 800;
+	
+	/* graphic styles */
+	--default-border-size: 2px;
+	--default-border-radius: 4px;
+	
+	/* global defaults */
+	font-size: var(--default-font-size);
+	scroll-behavior: smooth;
 }
 
 @media (color-gamut: p3) {
@@ -55,5 +69,45 @@ html {
 body {
 	background: var(--silent);
 	color: var(--loud);
+	container-type: inline-size;
+	line-height: var(--default-line-height);
+}
+main {
+	margin-inline: auto;
+	max-width: 50rem;
+	padding-inline: 1rem;
+}
+
+/* headings */
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--sans-serif);
+	font-weight: var(--bold-weight);
+	small {
+		font-weight: var(--light-weight);
+	}
+}
+h1, h2, h3 {
+	margin-block: 2rem 1rem;
+}
+h1 {
+	font-size: 3rem;
+}
+h2 {
+	font-size: 2rem;
+}
+h3 {
+	font-size: 1.5rem;
+}
+h4, h5, h6 {
+	margin-block-start: 1rem;
+}
+h4 {
+	font-size: 1rem;
+}
+h5 {
+	font-size: 0.9rem;
+}
+h6 {
+	font-size: 0.8rem;
 }
 
