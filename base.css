@@ -187,7 +187,9 @@ hr {
 a {
     text-decoration: underline;
     text-decoration-style: solid;
-    transition: color 0.2s ease-in-out;
+    transition-duration: 0.2s;
+    transition-property: background-color;
+    transition-property-function: ease-in-out;
     &:link {
         color: var(--blue);
     }
@@ -195,10 +197,10 @@ a {
         color: var(--purple);
     }
     &:hover {
-        color: var(--green);
+        background-color: color-mix(in srgb, var(--yellow) 20%, transparent);
     }
     &:active {
-        color: var(--red);
+        background-color: color-mix(in srgb, var(--yellow) 50%, transparent);
     }
 }
 abbr {
@@ -329,4 +331,34 @@ th {
 caption {
     color: var(--hushed);
     font-family: var(--sans-serif);
+}
+
+/* forms */
+form {
+    --form-font: var(--sans-serif);
+}
+input[type="button"] {
+    --base-color: var(--whisper);
+    --highlight-color: var(--yellow);
+    background-color: var(--base-color);
+    border: var(--default-border-width) solid var(--hushed);
+    border-radius: var(--default-border-radius);
+    font-family: var(--form-font);
+    font-weight: var(--bold-weight);
+    padding: calc(var(--block-space) * 0.25) calc(var(--inline-space) * 0.5);
+    transition-duration: 0.2s;
+    transition-property: background-color, border-color, box-shadow, color;
+    transition-property-function: ease-in-out;
+    &:hover {
+        background-color: color-mix(in srgb, var(--highlight-color) 10%, var(--base-color));
+        border-color: hsl(from var(--highlight-color) h s 10%);
+        color: hsl(from var(--highlight-color) h s 10%);
+        box-shadow: 0 0 0 4px color-mix(in srgb, var(--highlight-color) 20%, transparent);
+    }
+    &:active {
+        background-color: color-mix(in srgb, var(--highlight-color) 20%, var(--base-color));
+        border-color: hsl(from var(--highlight-color) h s 20%);
+        color: hsl(from var(--highlight-color) h s 20%);
+        box-shadow: 0 0 0 4px color-mix(in srgb, var(--highlight-color) 40%, transparent);
+    }
 }
