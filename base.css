@@ -72,7 +72,12 @@ html {
         --purple: color(display-p3 0.553 0.036 0.589);
     }
 }
-
+*:focus, *:focus-visible {
+  outline-color: color-mix(in srgb, var(--blue) 40%, transparent);
+  outline-style: solid;
+  outline-width: 3px;
+  outline-offset: 3px;
+}
 body {
     background: var(--silent);
     color: var(--loud);
