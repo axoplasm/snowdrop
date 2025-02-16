@@ -132,14 +132,7 @@ h6 {
 
 /* block text */
 p, blockquote, dl, ol, ul, menu, pre {
-    &:not(:last-child) {
-        margin-block-end: var(--block-space);
-    }
-}
-p {
-    &:not(:first-of-type) {
-        margin-block-start: var(--block-space);
-    }
+    margin-block-end: var(--block-space);
 }
 blockquote {
     background-color: var(--quiet);
@@ -476,5 +469,22 @@ input[type=range] {
         color: transparent;
     }
 }
+select {
+    background-color: var(--quiet);
+    border: var(--border-width) solid var(--hushed);
+    border-radius: var(--border-radius);
+    padding-block: 0.25rem;
+    padding-inline: 0.5rem 2rem;
 
+    /* arrow */
+    /* note hardcoded hex codes */
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-image: url('data:image/svg+xml,<svg width="16px" height="8px" viewBox="0 0 16 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="Path" fill="%23000" points="0 0 8 8 16 0"></polygon></g></svg>');
+}
+@media (prefers-color-scheme: dark) {
+    select {
+        background-image: url('data:image/svg+xml,<svg width="16px" height="8px" viewBox="0 0 16 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="Path" fill="%23fff" points="0 0 8 8 16 0"></polygon></g></svg>');
+    }
+}
 
