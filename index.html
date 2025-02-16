@@ -9,6 +9,18 @@
         <link rel="stylesheet" href="base.css">
     </head>
     <body>
+        <nav>
+            <menu>
+                <li><a href="#headings">Headings</a></li>
+                <li><a href="#block-text">Block text</a></li>
+                <li><a href="#inline-text">Inline text</a></li>
+                <li><a href="#media">Media</a></li>
+                <li><a href="#tables">Tables</a></li>
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#interactive-elements">Interactive elements</a></li>
+                <li><a href="#structural-elements">Structural elements</a></li>
+            </menu>
+        </nav>
         <main>
             <hgroup id="top">
                 <h1>HTML elements</h1>
@@ -26,6 +38,7 @@
                 <h4>Heading Level 4 <small>small text</small> <a href="//example.com">link</a></h4>
                 <h5>Heading Level 5 <small>small text</small> <a href="//example.com">link</a></h5> 
                 <h6>Heading Level 6 <small>small text</small> <a href="//example.com">link</a></h6>
+                <nav><p><a href="#top">Top ⤴️</a></p></nav>
             </section>
 
             <section id="block-text">
@@ -107,6 +120,7 @@ breaks
                 source code.
 </pre>
 
+                <nav><p><a href="#top">Top ⤴️</a></p></nav>
             </section>
 
             <section id="inline-text">
@@ -166,6 +180,7 @@ breaks
 
                 <p><var>var</var> is for a mathematical variable: <var>a<var> = <var>h</var> × <var>w</var>.</p>
 
+                <nav><p><a href="#top">Top ⤴️</a></p></nav>
             </section>
 
             <section id="media">
@@ -197,12 +212,13 @@ breaks
                     <source src="media/kuma.mov" type="video/mp4" />
                 </video>
 
+                <nav><p><a href="#top">Top ⤴️</a></p></nav>
             </section>
 
-            <section id="table">
+            <section id="tables">
                 <hgroup>
                     <hr />
-                    <h2><small>Table</small></h2>
+                    <h2><small>Tables</small></h2>
                 </hgroup>
 
                 <table>
@@ -253,6 +269,7 @@ breaks
                     </tfoot>
                 </table>
 
+                <nav><p><a href="#top">Top ⤴️</a></p></nav>
             </section>
 
             <section id="forms">
@@ -288,7 +305,7 @@ breaks
 
                     <p class="form-element">
                         <label for="datalist-input">datalist</label>
-                        <input list="datalist-list" id="input-datalist" name="form-datalist" />
+                        <input type="text" list="datalist-list" id="input-datalist" name="form-datalist" />
                         <datalist id="datalist-list">
                             <option value="option1">option1</option>
                             <option value="option2">option2</option>
@@ -393,14 +410,27 @@ breaks
                         <input type="week" id="input-week" name="form-week" />
                     </p>
 
-                    <section>
-                        <optgroup>
-                            <option>option</option>
-                        </optgroup>
-                    </section>
-                    <textarea>textarea</textarea>
+                    <p class="form-element">
+                        <label>select</label>
+                        <select>
+                            <optgroup label="optgroup1">
+                                <option>option1a</option>
+                                <option>option1b</option>
+                            </optgroup>
+                            <optgroup label="optgroup2">
+                                <option>option2a</option>
+                                <option>option2b</option>
+                            </optgroup>
+                        </select>
+                    </p>
+
+                    <p class="form-element">
+                        <label>textarea</label> 
+                        <textarea>textarea</textarea>
+                    </p>
                 </form>
 
+                <nav><p><a href="#top">Top ⤴️</a></p></nav>
             </section>
 
             <section id="interactive-elements">
@@ -427,6 +457,7 @@ breaks
 
                 <progress max="100" value="70">70%</progress>
 
+                <nav><p><a href="#top">Top ⤴️</a></p></nav>
             </section>
 
             <section id="structural-elements">
@@ -453,6 +484,7 @@ breaks
 
                 section
 
+                <nav><p><a href="#top">Top ⤴️</a></p></nav>
             </section>
 
         </main>

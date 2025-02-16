@@ -14,24 +14,24 @@ html {
 
     /* abstract grays */
     --loud: light-dark(
-    var(--black), 
-    var(--white)
+        var(--black), 
+        var(--white)
     );
     --silent: light-dark(
-    var(--white), 
-    var(--black)
+        var(--white), 
+        var(--black)
     );
     --hushed: light-dark(
-    hsl(from var(--black) h 0% 40%),
-    hsl(from var(--black) h 0% 60%)
+        hsl(from var(--black) h 0% 50%),
+        hsl(from var(--black) h 0% 60%)
     );
     --whisper: light-dark(
-    hsl(from var(--black) h 0% 80%),
-    hsl(from var(--black) h 0% 40%)
+        hsl(from var(--black) h 0% 80%),
+        hsl(from var(--black) h 0% 40%)
     );
     --quiet: light-dark(
-    hsl(from var(--black) h 0% 95%),
-    hsl(from var(--black) h 0% 20%)
+        hsl(from var(--black) h 0% 95%),
+        hsl(from var(--black) h 0% 20%)
     );
 
     /* type */
@@ -100,9 +100,9 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 h1, h2, h3 {
-    margin-block-end: 1rem;
+    margin-block-end: var(--block-space);
     &:not(:first-of-type) {
-        margin-block-start: 2rem;
+        margin-block-start: calc(var(--block-space) * 2);
     }
 }
 h1 {
@@ -115,6 +115,7 @@ h3 {
     font-size: 1.5rem;
 }
 h4, h5, h6 {
+    margin-block-end: var(--block-space);
     &:not(:first-of-type) {
         margin-block-start: 1rem;
     }
@@ -342,9 +343,9 @@ caption {
 
 /* forms */
 form {
-    --form-font: var(--sans-serif);
 }
 fieldset {
+    background-color: var(--quiet);
     border: var(--border-width) solid var(--whisper);
     border-radius: var(--border-radius);
     padding: var(--block-space) var(--inline-space);
@@ -352,29 +353,46 @@ fieldset {
         margin-block-end: var(--block-space);
     }
 }
+legend, label, input, select, textarea {
+    font-family: var(--sans-serif);
+}
 legend {
-    background-color: var(--silent);
-    font-family: var(--form-font);
+    background-color: transparent;
     font-weight: bold;
     padding-inline: calc(var(--inline-space) * 0.5);
 }
 label {
-    font-family: var(--form-font);
+    display: block;
 }
-input, textarea, select {
+/* textish inputs */
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+textarea {
     background: var(--silent);
     border: var(--border-width) solid var(--hushed);
     border-radius: var(--border-radius);
-    font-family: var(--form-font);
     padding: calc(var(--block-space) * 0.25) calc(var(--inline-space) * 0.5);
+    &::placeholder {
+        color: var(--whisper);
+    }
 }
 input[type="button"] {
     --base-color: var(--whisper);
-    --highlight-color: var(--yellow);
+    --highlight-color: var(--green);
+    --highlight-shadow: 0 0 0 4px color-mix(in srgb, var(--highlight-color) 20%, transparent);
     background-color: var(--base-color);
     border: var(--border-width) solid var(--hushed);
     border-radius: var(--border-radius);
-    font-family: var(--form-font);
     font-weight: var(--bold-weight);
     padding: calc(var(--block-space) * 0.325) calc(var(--inline-space) * 0.75);
     transition-duration: var(--transition-speed);
@@ -390,7 +408,7 @@ input[type="button"] {
         background-color: color-mix(in srgb, var(--highlight-color) 20%, var(--base-color));
         border-color: hsl(from var(--highlight-color) h s 20%);
         color: hsl(from var(--highlight-color) h s 20%);
-        box-shadow: 0 0 0 4px color-mix(in srgb, var(--highlight-color) 40%, transparent);
+        box-shadow: var(--highlight-shadow);
     }
 }
 form menu li {
@@ -400,6 +418,7 @@ form menu li {
     display: flex;
 }
 input[type="checkbox"], input[type="radio"] {
+    background-color: var(--silent);
     border: var(--border-width) solid var(--hushed);
     border-radius: var(--border-radius);
     padding: calc(var(--block-space) * 0.5);
@@ -407,11 +426,55 @@ input[type="checkbox"], input[type="radio"] {
     transition-property: box-shadow;
     transition-property-function: var(--transition-property-function);
     &:checked {
-        background: var(--loud);
-        border-color: var(--loud);
+        background: var(--hushed);
+        border-color: var(--hushed);
         box-shadow: inset 0 0 0 3px var(--silent);
     }
 }
-input[type=radio] {
+input[type="radio"] {
     border-radius: 100%;
 }
+input[type="color"] {
+    background-color: var(--whisper);
+    border: var(--border-width) solid var(--hushed);
+    border-radius: var(--border-radius);
+    padding: calc(var(--border-width) * 2);
+    height: calc(var(--block-space) * 2);
+    width: calc(var(--inline-space) * 2);
+}
+input[type="file"] {
+    border: var(--border-width) solid var(--whisper);
+    border-radius: var(--border-radius);
+    padding: var(--block-space) var(--inline-space);
+}
+input[type=range] {
+    -webkit-appearance: none;
+    background-color: var(--quiet);
+    border: var(--border-width) solid var(--hushed);
+    border-radius: var(--block-space);
+    padding: 2px;
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: none;
+        background-color: var(--hushed);
+        height: var(--block-space);
+        width: var(--inline-space);
+        border-radius: 100%;
+    }
+    &::-moz-range-thumb {
+        border: none;
+        background-color: var(--hushed);
+        height: var(--block-space);
+        width: var(--inline-space);
+        border-radius: 100%;
+    }
+    &::-ms-thumb {
+        width: 100%;
+        background: transparent;
+        border-color: transparent;
+        border-radius: 100%;
+        color: transparent;
+    }
+}
+
+
