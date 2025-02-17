@@ -14,24 +14,24 @@ html {
 
     /* abstract grays */
     --loud: light-dark(
-        var(--black), 
-        var(--white)
+    var(--black), 
+    var(--white)
     );
     --silent: light-dark(
-        var(--white), 
-        var(--black)
+    var(--white), 
+    var(--black)
     );
     --hushed: light-dark(
-        hsl(from var(--black) h 0% 50%),
-        hsl(from var(--black) h 0% 60%)
+    hsl(from var(--black) h 0% 50%),
+    hsl(from var(--black) h 0% 60%)
     );
     --whisper: light-dark(
-        hsl(from var(--black) h 0% 80%),
-        hsl(from var(--black) h 0% 40%)
+    hsl(from var(--black) h 0% 80%),
+    hsl(from var(--black) h 0% 40%)
     );
     --quiet: light-dark(
-        hsl(from var(--black) h 0% 95%),
-        hsl(from var(--black) h 0% 20%)
+    hsl(from var(--black) h 0% 95%),
+    hsl(from var(--black) h 0% 20%)
     );
 
     /* type */
@@ -73,10 +73,10 @@ html {
     }
 }
 *:focus, *:focus-visible {
-  outline-color: color-mix(in srgb, var(--blue) 40%, transparent);
-  outline-style: solid;
-  outline-width: 3px;
-  outline-offset: 3px;
+    outline-color: color-mix(in srgb, var(--blue) 40%, transparent);
+    outline-style: solid;
+    outline-width: 3px;
+    outline-offset: 3px;
 }
 body {
     background: var(--silent);
@@ -487,4 +487,10 @@ select {
         background-image: url('data:image/svg+xml,<svg width="16px" height="8px" viewBox="0 0 16 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="Path" fill="%23fff" points="0 0 8 8 16 0"></polygon></g></svg>');
     }
 }
-
+/* interactive elements */
+button { 
+    /* intentionally unstyled */
+}
+map {
+    display: block;  
+}
