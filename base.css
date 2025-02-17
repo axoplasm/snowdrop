@@ -50,8 +50,7 @@ html {
     /* graphic styles */
     --border-width: 1px;
     --border-radius: 4px;
-    --block-space: 1rem;
-    --inline-space: 1rem;
+    --grid: 1rem;
     --transition-speed: 0.2s;
     --transition-timing-function: ease-in-out;
     --transition: all var(--transition-speed) var(--transition-timing-function);
@@ -100,9 +99,9 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 h1, h2, h3 {
-    margin-block-end: var(--block-space);
+    margin-block-end: var(--grid);
     &:not(:first-of-type) {
-        margin-block-start: calc(var(--block-space) * 2);
+        margin-block-start: calc(var(--grid) * 2);
     }
 }
 h1 {
@@ -115,7 +114,7 @@ h3 {
     font-size: 1.5rem;
 }
 h4, h5, h6 {
-    margin-block-end: var(--block-space);
+    margin-block-end: var(--grid);
     &:not(:first-of-type) {
         margin-block-start: 1rem;
     }
@@ -132,7 +131,7 @@ h6 {
 
 /* block text */
 p, blockquote, dl, ol, ul, menu, pre {
-    margin-block-end: var(--block-space);
+    margin-block-end: var(--grid);
 }
 blockquote {
     background-color: var(--quiet);
@@ -140,12 +139,12 @@ blockquote {
     color: var(--hushed);
     font-style: italic;
     font-size: var(--bigger-font-size);
-    margin-block: var(--block-space);
-    padding-block: var(--block-space);
-    padding-inline: var(--inline-space);
+    margin-block: var(--grid);
+    padding-block: var(--grid);
+    padding-inline: var(--grid);
 }
 dl, ol, ul, menu {
-    --list-indent: calc(var(--inline-space) * 2);
+    --list-indent: calc(var(--grid) * 2);
 }
 dl {
 }
@@ -155,7 +154,7 @@ dt {
 dd {
     margin-inline-start: var(--list-indent);
     &:not(:last-child) {
-        margin-block-end: calc(var(--block-space) * 0.5);
+        margin-block-end: calc(var(--grid) * 0.5);
     }
 }
 ol, ul {
@@ -178,9 +177,9 @@ hr {
     border-color: var(--hushed);
     border-style: solid;
     border-width: 0 0 var(--border-width) 0;
-    margin-block-start: calc(var(--block-space) * 2);
+    margin-block-start: calc(var(--grid) * 2);
     &:not(:first-child) {
-        margin-block-end: calc(var(--block-space) * 2);
+        margin-block-end: calc(var(--grid) * 2);
     }
 }
 
@@ -306,7 +305,7 @@ figcaption {
 table {
     border: var(--border-width) solid var(--hushed);
     font-family: var(--sans-serif);
-    margin-block: var(--block-space);
+    margin-block: var(--grid);
 }
 tbody {
 }
@@ -320,8 +319,8 @@ tfoot {
     border-block-start: var(--border-width) solid var(--whisper);
 }
 td, th {
-    padding-block: calc(var(--block-space) * 0.25);
-    padding-inline: calc(var(--inline-space) * 0.5);
+    padding-block: calc(var(--grid) * 0.25);
+    padding-inline: calc(var(--grid) * 0.5);
 }
 th {
     font-weight: var(--bold-weight);
@@ -341,9 +340,9 @@ fieldset {
     background-color: var(--quiet);
     border: var(--border-width) solid var(--whisper);
     border-radius: var(--border-radius);
-    padding: var(--block-space) var(--inline-space);
+    padding: var(--grid) var(--grid);
     &:not(:last-child) {
-        margin-block-end: var(--block-space);
+        margin-block-end: var(--grid);
     }
 }
 legend, label, input, select, textarea {
@@ -352,7 +351,7 @@ legend, label, input, select, textarea {
 legend {
     background-color: transparent;
     font-weight: bold;
-    padding-inline: calc(var(--inline-space) * 0.5);
+    padding-inline: calc(var(--grid) * 0.5);
 }
 label {
     display: block;
@@ -374,7 +373,7 @@ textarea {
     background: var(--silent);
     border: var(--border-width) solid var(--hushed);
     border-radius: var(--border-radius);
-    padding: calc(var(--block-space) * 0.25) calc(var(--inline-space) * 0.5);
+    padding: calc(var(--grid) * 0.25) calc(var(--grid) * 0.5);
     &::placeholder {
         color: var(--whisper);
     }
@@ -387,7 +386,7 @@ input[type="button"] {
     border: var(--border-width) solid var(--hushed);
     border-radius: var(--border-radius);
     font-weight: var(--bold-weight);
-    padding: calc(var(--block-space) * 0.325) calc(var(--inline-space) * 0.75);
+    padding: calc(var(--grid) * 0.325) calc(var(--grid) * 0.75);
     transition-duration: var(--transition-speed);
     transition-property: background-color, border-color, box-shadow, color;
     transition-timing-function: var(--transition-timing-function);
@@ -407,14 +406,14 @@ input[type="button"] {
 form menu li {
     /* for radio and checkbox sets */
     align-items: center;
-    column-gap: calc(var(--inline-space) * 0.5);
+    column-gap: calc(var(--grid) * 0.5);
     display: flex;
 }
 input[type="checkbox"], input[type="radio"] {
     background-color: var(--silent);
     border: var(--border-width) solid var(--hushed);
     border-radius: var(--border-radius);
-    padding: calc(var(--block-space) * 0.5);
+    padding: calc(var(--grid) * 0.5);
     transition-duration: var(--transition-speed);
     transition-property: box-shadow;
     transition-timing-function: var(--transition-timing-function);
@@ -432,33 +431,33 @@ input[type="color"] {
     border: var(--border-width) solid var(--hushed);
     border-radius: var(--border-radius);
     padding: calc(var(--border-width) * 2);
-    height: calc(var(--block-space) * 2);
-    width: calc(var(--inline-space) * 2);
+    height: calc(var(--grid) * 2);
+    width: calc(var(--grid) * 2);
 }
 input[type="file"] {
     border: var(--border-width) solid var(--whisper);
     border-radius: var(--border-radius);
-    padding: var(--block-space) var(--inline-space);
+    padding: var(--grid) var(--grid);
 }
 input[type=range] {
     -webkit-appearance: none;
     background-color: var(--quiet);
     border: var(--border-width) solid var(--hushed);
-    border-radius: var(--block-space);
+    border-radius: var(--grid);
     padding: 2px;
     &::-webkit-slider-thumb {
         -webkit-appearance: none;
         border: none;
         background-color: var(--hushed);
-        height: var(--block-space);
-        width: var(--inline-space);
+        height: var(--grid);
+        width: var(--grid);
         border-radius: 100%;
     }
     &::-moz-range-thumb {
         border: none;
         background-color: var(--hushed);
-        height: var(--block-space);
-        width: var(--inline-space);
+        height: var(--grid);
+        width: var(--grid);
         border-radius: 100%;
     }
     &::-ms-thumb {
@@ -495,47 +494,50 @@ map {
     display: block;  
 }
 details {
+    --outer-padding: calc(var(--grid) * 0.5);
     border: var(--border-width) solid var(--whisper);
     border-radius: var(--border-radius);
-    margin-block-end: var(--block-space);
-    padding-block-start: var(--block-space);
-    padding-inline: var(--inline-space);
+    margin-block-end: var(--grid);
+    padding-block-start: var(--outer-padding);
+    padding-inline: var(--outer-padding);
     summary {
+        background-color: var(--quiet);
+        cursor: pointer;
+        font-family: var(--sans-serif);
+        font-weight: var(--bold-weight);
+        padding: var(--outer-padding);
+        margin-block-start: calc(var(--outer-padding) * -1);
+        margin-inline: calc(var(--outer-padding) * -1);
+        transition: margin-block-end 0.2s ease-in-out;
         &:before {
-            content: "+";
+            background-position: center;
+            background-repeat: no-repeat;
+            content: "";
             display: inline-block;
             height: 16px;
-            margin-inline-end: calc(var(--inline-space) * 0.25);
+            margin-inline-end: calc(var(--grid) * 0.25);
             width: 16px;
-            /*
-            background-position: center bottom;
-            background-repeat: no-repeat;
-            background-image: url('data:image/svg+xml,<svg width="16px" height="8px" viewBox="0 0 16 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="Path" fill="%23000" points="0 0 8 8 16 0"></polygon></g></svg>');
-            */
-            }
-
+        }
+    }
+    &[open] summary {
+        margin-block-end: var(--grid);
+        &:before {
         }
     }
 }
-details summary {
-    /*
-    transition-duration: var(--transition-speed);
-    transition-property: margin;
-    transition-timing-function: var(--transition-timing-function);
-    */
-}
-details[open] > summary {
-    margin-block-end: var(--block-space);
+/* details/summary arrow */
+/* note hardcoded hex codes */
+details summary:before {
+    background-image: url('data:image/svg+xml,<svg width="8px" height="16px" viewBox="0 0 8 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="Path" fill="%23000" points="0 0 0 16 8 8"></polygon></g></svg>');
 }
 details[open] summary:before {
-    content: "-";
+    background-image: url('data:image/svg+xml,<svg width="16px" height="8px" viewBox="0 0 16 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="Path" fill="%23000" points="0 0 8 8 16 0"></polygon></g></svg>');
 }
-summary {
-    background-color: var(--quiet);
-    font-family: var(--sans-serif);
-    font-weight: var(--bold-weight);
-    padding: 1rem;
-    margin-block-start: -1rem;
-    margin-inline: -1rem;
-    transition: margin-block-end 0.2s ease-in-out;
+@media (prefers-color-scheme: dark) {
+    details summary:before {
+        background-image: url('data:image/svg+xml,<svg width="8px" height="16px" viewBox="0 0 8 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="Path" fill="%23fff" points="0 0 0 16 8 8"></polygon></g></svg>');
+    }
+    details[open] summary:before {
+        background-image: url('data:image/svg+xml,<svg width="16px" height="8px" viewBox="0 0 16 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="Path" fill="%23fff" points="0 0 8 8 16 0"></polygon></g></svg>');
+    }
 }
