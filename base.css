@@ -541,3 +541,9 @@ details[open] summary:before {
         background-image: url('data:image/svg+xml,<svg width="16px" height="8px" viewBox="0 0 16 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="Path" fill="%23fff" points="0 0 8 8 16 0"></polygon></g></svg>');
     }
 }
+
+/* structural elements */
+/* intentionally unstyled */
+address, article, aside, div, footer, header, nav, search, section {
+    display: block;
+}
