@@ -53,8 +53,8 @@ html {
     --block-space: 1rem;
     --inline-space: 1rem;
     --transition-speed: 0.2s;
-    --transition-property-function: ease-in-out;
-    --transition: all var(--transition-speed) var(--transition-property-function);
+    --transition-timing-function: ease-in-out;
+    --transition: all var(--transition-speed) var(--transition-timing-function);
 
     /* global defaults */
     font-size: var(--default-font-size);
@@ -190,7 +190,7 @@ a {
     text-decoration-style: solid;
     transition-duration: var(--transition-speed);
     transition-property: background-color;
-    transition-property-function: var(--transition-property-function);
+    transition-timing-function: var(--transition-timing-function);
     &:link {
         color: var(--blue);
     }
@@ -390,7 +390,7 @@ input[type="button"] {
     padding: calc(var(--block-space) * 0.325) calc(var(--inline-space) * 0.75);
     transition-duration: var(--transition-speed);
     transition-property: background-color, border-color, box-shadow, color;
-    transition-property-function: var(--transition-property-function);
+    transition-timing-function: var(--transition-timing-function);
     &:hover {
         background-color: color-mix(in srgb, var(--highlight-color) 10%, var(--base-color));
         border-color: hsl(from var(--highlight-color) h s 10%);
@@ -417,7 +417,7 @@ input[type="checkbox"], input[type="radio"] {
     padding: calc(var(--block-space) * 0.5);
     transition-duration: var(--transition-speed);
     transition-property: box-shadow;
-    transition-property-function: var(--transition-property-function);
+    transition-timing-function: var(--transition-timing-function);
     &:checked {
         background: var(--hushed);
         border-color: var(--hushed);
@@ -478,8 +478,8 @@ select {
 
     /* arrow */
     /* note hardcoded hex codes */
-    background-repeat: no-repeat;
     background-position: right 0.5rem center;
+    background-repeat: no-repeat;
     background-image: url('data:image/svg+xml,<svg width="16px" height="8px" viewBox="0 0 16 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="Path" fill="%23000" points="0 0 8 8 16 0"></polygon></g></svg>');
 }
 @media (prefers-color-scheme: dark) {
@@ -493,4 +493,49 @@ button {
 }
 map {
     display: block;  
+}
+details {
+    border: var(--border-width) solid var(--whisper);
+    border-radius: var(--border-radius);
+    margin-block-end: var(--block-space);
+    padding-block-start: var(--block-space);
+    padding-inline: var(--inline-space);
+    summary {
+        &:before {
+            content: "+";
+            display: inline-block;
+            height: 16px;
+            margin-inline-end: calc(var(--inline-space) * 0.25);
+            width: 16px;
+            /*
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-image: url('data:image/svg+xml,<svg width="16px" height="8px" viewBox="0 0 16 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="Path" fill="%23000" points="0 0 8 8 16 0"></polygon></g></svg>');
+            */
+            }
+
+        }
+    }
+}
+details summary {
+    /*
+    transition-duration: var(--transition-speed);
+    transition-property: margin;
+    transition-timing-function: var(--transition-timing-function);
+    */
+}
+details[open] > summary {
+    margin-block-end: var(--block-space);
+}
+details[open] summary:before {
+    content: "-";
+}
+summary {
+    background-color: var(--quiet);
+    font-family: var(--sans-serif);
+    font-weight: var(--bold-weight);
+    padding: 1rem;
+    margin-block-start: -1rem;
+    margin-inline: -1rem;
+    transition: margin-block-end 0.2s ease-in-out;
 }
