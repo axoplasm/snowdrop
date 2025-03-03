@@ -1,3 +1,5 @@
+/* Base stylesheet contains only HTML elements & provides default appearance */
+
 :root {
     color-scheme: light dark;
 }
@@ -546,4 +548,5 @@ details[open] summary:before {
 /* intentionally unstyled */
 address, article, aside, div, footer, header, nav, search, section {
     display: block;
+    font-family: var(--sans-serif);
 }

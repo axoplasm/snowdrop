@@ -1,0 +1,11 @@
+/* Local stylesheet contains only classes and provides special behaviors */
+
+.main-nav {
+    margin-inline: auto;
+    max-width: 50rem;
+    padding-inline: 1rem;
+    menu {
+        column-gap: 1em;
+        display: flex;
+    }
+}
