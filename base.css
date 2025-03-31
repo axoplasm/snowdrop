@@ -16,24 +16,24 @@ html {
 
     /* abstract grays */
     --loud: light-dark(
-    var(--black), 
-    var(--white)
-    );
-    --silent: light-dark(
-    var(--white), 
-    var(--black)
+        var(--black), 
+        var(--white)
     );
     --hushed: light-dark(
-    hsl(from var(--black) h 0% 50%),
-    hsl(from var(--black) h 0% 60%)
+        hsl(from var(--black) h 0% 50%),
+        hsl(from var(--black) h 0% 60%)
     );
     --whisper: light-dark(
-    hsl(from var(--black) h 0% 80%),
-    hsl(from var(--black) h 0% 40%)
+        hsl(from var(--black) h 0% 80%),
+        hsl(from var(--black) h 0% 40%)
     );
     --quiet: light-dark(
-    hsl(from var(--black) h 0% 95%),
-    hsl(from var(--black) h 0% 20%)
+        hsl(from var(--black) h 0% 95%),
+        hsl(from var(--black) h 0% 20%)
+    );
+    --silent: light-dark(
+        var(--white), 
+        var(--black)
     );
 
     /* type */
@@ -204,10 +204,11 @@ a {
         color: var(--purple);
     }
     &:hover {
-        background-color: color-mix(in srgb, var(--yellow) 20%, transparent);
+        background-color: color-mix(in srgb, var(--blue) 25%, transparent);
     }
     &:active {
-        background-color: color-mix(in srgb, var(--yellow) 50%, transparent);
+        background-color: color-mix(in srgb, var(--blue) 60%, transparent);
+        color: var(--white);
     }
 }
 abbr {
