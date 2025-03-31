@@ -168,6 +168,11 @@ ul {
 ol {
     list-style-type: decimal;
 }
+li {
+    ol, ul , menu {
+        margin-block-end: 0;
+    }
+}
 menu menu {
     margin-inline-start: var(--list-indent);
 }
