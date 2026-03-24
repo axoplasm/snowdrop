@@ -541,6 +541,53 @@ details {
         }
     }
 }
+meter, progress {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--quiet);
+    border: var(--border-width) solid var(--whisper);
+    border-radius: var(--grid);
+    display: block;
+    height: calc(var(--grid) * 0.75);
+    margin-block: var(--grid);
+    width: 100%;
+}
+meter {
+    &::-webkit-meter-bar {
+        background-color: var(--quiet);
+        border: none;
+        border-radius: var(--grid);
+    }
+    &::-webkit-meter-optimum-value {
+        background-color: var(--green);
+        border-radius: var(--grid);
+    }
+    &::-webkit-meter-suboptimum-value {
+        background-color: var(--orange);
+        border-radius: var(--grid);
+    }
+    &::-webkit-meter-even-less-good-value {
+        background-color: var(--red);
+        border-radius: var(--grid);
+    }
+    &:-moz-meter-optimum::-moz-meter-bar { background-color: var(--green); }
+    &:-moz-meter-sub-optimum::-moz-meter-bar { background-color: var(--orange); }
+    &:-moz-meter-sub-sub-optimum::-moz-meter-bar { background-color: var(--red); }
+}
+progress {
+    &::-webkit-progress-bar {
+        background-color: var(--quiet);
+        border-radius: var(--grid);
+    }
+    &::-webkit-progress-value {
+        background-color: var(--hushed);
+        border-radius: var(--grid);
+    }
+    &::-moz-progress-bar {
+        background-color: var(--hushed);
+        border-radius: var(--grid);
+    }
+}
 
 
 /* structural elements */
